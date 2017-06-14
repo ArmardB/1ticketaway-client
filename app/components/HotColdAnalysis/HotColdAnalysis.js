@@ -5,40 +5,101 @@ import Section from '../Section';
 import NumberBall from '../NumberBall';
 
 class HotColdAnalysis extends Component {
-  
 
+  state = {
+    hotNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    warmNumbers: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+    neutralNumbers: [27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39],
+    coolNumbers: [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52],
+    coldNumbers: [53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69],
+    
+  };
+
+  loadHotNumbers() {
+    return this.state.hotNumbers.map(hotNumber =>
+      <NumberBall key={hotNumber} number={hotNumber} />
+    );
+  }
+
+  loadWarmNumbers() {
+    return this.state.warmNumbers.map(warmNumber =>
+      <NumberBall key={warmNumber} number={warmNumber} />
+    );
+  }
+
+  loadNuetralNumbers() {
+    return this.state.neutralNumbers.map(neutralNumber =>
+      <NumberBall key={neutralNumber} number={neutralNumber} />
+    );
+  }
+
+  loadCoolNumbers() {
+    return this.state.coolNumbers.map(coolNumber =>
+      <NumberBall key={coolNumber} number={coolNumber} />
+    );
+  }
+
+  loadColdNumbers() {
+    return this.state.coldNumbers.map(coldNumber =>
+      <NumberBall key={coldNumber} number={coldNumber} />
+    );
+  }
   
   render() {
-    this.state = {
-      number: 0
-    }
-    const hot = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
-    const cold = [24, 25, 25, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
-    const neutral = [47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 67, 69];
-
-    const loadNumbers = () => {
-      hot.map((num,i) => {
-        return (
-          <NumberBall number={2}/>
-        );
-      });
-    };
     return (
 
-      <View style={{flex: 1, flexDirection: 'row'}}>
-        <View style={{width: 75, height: 250, backgroundColor: '#0000FF'}} >
-          <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center'}}>
-          Cold
+      <View style={{ flex: 1, flexDirection: 'row' }}>
+        <View style={{ width: 75, height: 250, backgroundColor: '#0000FF', paddingLeft: 14 }} >
+          <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>
+            Cold
             </Text>
-            <NumberBall number={1} />
-            <NumberBall number={2} />
+          {this.loadHotNumbers()}
         </View>
-        <View style={{width: 75, height: 50, backgroundColor: '#8888FF'}} />
-        <View style={{width: 75, height: 50, backgroundColor: 'white'}} />
-        <View style={{width: 75, height: 50, backgroundColor: '#FF9999'}} />
-        <View style={{width: 75, height: 50, backgroundColor: '#FF0000'}} />
+        
+
+        
+        <View style={{ width: 75, height: 250, backgroundColor: '#8888FF', paddingLeft: 14 }} >
+          <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>
+            Cold
+            </Text>
+          {this.loadWarmNumbers()}
+        </View>
+        
+
+        
+        <View style={{ width: 75, height: 250, backgroundColor: 'white', paddingLeft: 14 }} >
+          <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>
+            Cold
+            </Text>
+          {this.loadNuetralNumbers()}
+        </View>
+        
+
+        
+        <View style={{ width: 75, height: 250, backgroundColor: '#FF9999', paddingLeft: 14 }} >
+          <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>
+            Cold
+            </Text>
+          {this.loadCoolNumbers()}
+        </View>
+        
+
+        
+        <View style={{ width: 75, height: 250, backgroundColor: '#FF0000', paddingLeft: 14 }} >
+          <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>
+            Cold
+            </Text>
+          {this.loadCoolNumbers()}
+        </View>
+        
+        {/*<View style={{ width: 75, height: 50, backgroundColor: '#8888FF' }} />
+        <View style={{ width: 75, height: 50, backgroundColor: 'white' }} />
+        <View style={{ width: 75, height: 50, backgroundColor: '#FF9999' }} />
+        <View style={{ width: 75, height: 50, backgroundColor: '#FF0000' }} />*/}
       </View>
     );
+
+
   }
 }
 
