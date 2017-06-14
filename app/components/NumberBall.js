@@ -32,7 +32,8 @@ const styles = {
     color: '#000',
     paddingTop: 10,
     paddingLeft: 10,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    backgroundColor: 'rgba(52, 52, 52, 0.0)'
   }
 }
 

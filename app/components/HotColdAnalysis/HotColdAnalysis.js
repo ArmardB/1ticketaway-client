@@ -5,7 +5,9 @@ import Section from '../Section';
 import NumberBall from '../NumberBall';
 
 class HotColdAnalysis extends Component {
+  
 
+  
   render() {
     this.state = {
       number: 0
@@ -14,18 +16,27 @@ class HotColdAnalysis extends Component {
     const cold = [24, 25, 25, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
     const neutral = [47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 67, 69];
 
-
+    const loadNumbers = () => {
+      hot.map((num,i) => {
+        return (
+          <NumberBall number={2}/>
+        );
+      });
+    };
     return (
+
       <View style={{flex: 1, flexDirection: 'row'}}>
-        <View style={{width: 50, height: 250, backgroundColor: '#0000FF', marginRight: 10}} >
+        <View style={{width: 75, height: 250, backgroundColor: '#0000FF'}} >
           <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center'}}>
           Cold
             </Text>
+            <NumberBall number={1} />
+            <NumberBall number={2} />
         </View>
-        <View style={{width: 50, height: 50, backgroundColor: '#8888FF'}} />
-        <View style={{width: 50, height: 50, backgroundColor: 'white'}} />
-        <View style={{width: 50, height: 50, backgroundColor: '#FF9999'}} />
-        <View style={{width: 50, height: 50, backgroundColor: '#FF0000'}} />
+        <View style={{width: 75, height: 50, backgroundColor: '#8888FF'}} />
+        <View style={{width: 75, height: 50, backgroundColor: 'white'}} />
+        <View style={{width: 75, height: 50, backgroundColor: '#FF9999'}} />
+        <View style={{width: 75, height: 50, backgroundColor: '#FF0000'}} />
       </View>
     );
   }
