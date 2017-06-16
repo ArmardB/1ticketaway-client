@@ -47,10 +47,10 @@ class HotColdAnalysis extends Component {
   
   render() {
     return (
-
-      <View style={{ flex: 1, flexDirection: 'row' }}>
-        <View style={{ width: 75, height: 250, backgroundColor: '#0000FF', paddingLeft: 14 }} >
-          <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>
+      // ******************* finish adjusting padding for Text  *******************
+      <View style={{ flex: 1, flexDirection: 'row', paddingTop: 10 }}>
+        <View style={{ width: 75, height: 600, backgroundColor: '#0000FF', paddingLeft: 14 }} >
+          <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center', paddingBottom: 5 }}>
             Cold
             </Text>
           {this.loadHotNumbers()}
@@ -58,44 +58,39 @@ class HotColdAnalysis extends Component {
         
 
         
-        <View style={{ width: 75, height: 250, backgroundColor: '#8888FF', paddingLeft: 14 }} >
-          <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>
-            Cold
+        <View style={{ width: 75, height: 600, backgroundColor: '#8888FF', paddingLeft: 14 }} >
+          <Text style={{ color: '#fff', fontWeight: 'bold', paddingLeft: 7 }}>
+            Cool
             </Text>
           {this.loadWarmNumbers()}
         </View>
         
 
         
-        <View style={{ width: 75, height: 250, backgroundColor: 'white', paddingLeft: 14 }} >
-          <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>
-            Cold
+        <View style={{ width: 75, height: 600, backgroundColor: 'white', paddingLeft: 14 }} >
+          <Text style={{ color: '#000', fontWeight: 'bold', textAlign: 'center' }}>
+            Neutral
             </Text>
           {this.loadNuetralNumbers()}
         </View>
         
 
         
-        <View style={{ width: 75, height: 250, backgroundColor: '#FF9999', paddingLeft: 14 }} >
+        <View style={{ width: 75, height: 600, backgroundColor: '#FF9999', paddingLeft: 14 }} >
           <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>
-            Cold
+            Warm
             </Text>
           {this.loadCoolNumbers()}
         </View>
         
 
         
-        <View style={{ width: 75, height: 250, backgroundColor: '#FF0000', paddingLeft: 14 }} >
+        <View style={{ width: 75, height: 600, backgroundColor: '#FF0000', paddingLeft: 14 }} >
           <Text style={{ color: '#fff', fontWeight: 'bold', textAlign: 'center' }}>
-            Cold
+            Hot
             </Text>
           {this.loadCoolNumbers()}
         </View>
-        
-        {/*<View style={{ width: 75, height: 50, backgroundColor: '#8888FF' }} />
-        <View style={{ width: 75, height: 50, backgroundColor: 'white' }} />
-        <View style={{ width: 75, height: 50, backgroundColor: '#FF9999' }} />
-        <View style={{ width: 75, height: 50, backgroundColor: '#FF0000' }} />*/}
       </View>
     );
 
