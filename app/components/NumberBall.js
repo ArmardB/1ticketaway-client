@@ -26,6 +26,7 @@ const styles = {
     shadowOpacity: 0.5,
     shadowRadius: 2,
     elevation: 1,
+    marginBottom: 3
     
   },
   textStyle: {

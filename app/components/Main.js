@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   Text,
-  View
+  View,
+  ScrollView
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 // import { registerScreens } from './screens';
@@ -13,34 +14,52 @@ import Card from './Card';
 import Section from './Section';
 import SectionTitle from './SectionTitle';
 import HotColdAnalysis from './HotColdAnalysis/HotColdAnalysis';
+import NumberGenerator from './NumberPicker/NumberGenerator';
+import NewsList from './NewsFeed/NewsItem';
 
 class Main extends Component {
   render() {
     return (
-      <View >
+      // <View style={{ height: 1000 }}>
+      <ScrollView>
         <Header headerText="Powerball" />
         <Card>
           <Section>
             <Jackpot />
           </Section>
-        
+
           <Section>
             <WinningNumberSection />
           </Section>
-          <SectionTitle headerText="Hot/Cold Analysis"/>
+
+          <SectionTitle headerText="Hot/Cold Analysis" />
+          {/*<Section>
           <HotColdAnalysis />
+          </Section>*/}
+          <SectionTitle headerText="Number Generator" />
+          <Section>
+            <NumberGenerator />
+          </Section>
+          <Section>
+            <NewsList />
+          </Section>
+
+
         </Card>
-      </View>
+      </ScrollView>
+      // </View>
     );
   }
 }
 const styles = {
-  container: {
+  scrollViewStyle: {
     flex: 1,
-    paddingTop: 40,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingTop: 60
   }
 };
 
