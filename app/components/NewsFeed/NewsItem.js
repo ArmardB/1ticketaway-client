@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
-import { View, Text, Image, Linking } from 'react-native';
-import Card from '../Card';
-import CardSection from '../CardSection';
+import React, { Component } from "react";
+import { View, Text, Image, Linking } from "react-native";
+import Card from "../Card";
+import CardSection from "../CardSection";
 
-
-
-const NewsItem = ({album}) => {
-
-  // const { date, title, snippet } = article; 
-  const { title, artist, thumbnail_image, image, url } = album;
-
+const NewsItem = ({ article }) => {
+  const { header, link, title_link, title, snippet } = article;
+  console.log(article);
   const {
     thumbnailStyle,
     headerContentStyle,
@@ -21,23 +17,11 @@ const NewsItem = ({album}) => {
   return (
     <Card>
       <CardSection>
-        <View style={thumbnailContainerStyle}>
-          <Image
-            style={thumbnailStyle}
-            source={{ uri: thumbnail_image }}
-          />
-        </View>
+        <View style={thumbnailContainerStyle} />
         <View style={headerContentStyle}>
-          <Text style={headerTextStyle}>{title}</Text>
-          <Text>{artist}</Text>
+          <Text style={{ fontSize: 24 }}>{article.title}</Text>
+          <Text style={{ fontSize: 24 }}>{article.snippet}</Text>
         </View>
-      </CardSection>
-
-      <CardSection>
-        <Image
-          style={imageStyle}
-          source={{ uri: image }}
-        />
       </CardSection>
     </Card>
   );
@@ -45,8 +29,8 @@ const NewsItem = ({album}) => {
 
 const styles = {
   headerContentStyle: {
-    flexDirection: 'column',
-    justifyContent: 'space-around'
+    flexDirection: "column",
+    justifyContent: "space-around"
   },
   headerTextStyle: {
     fontSize: 18
@@ -56,8 +40,8 @@ const styles = {
     width: 50
   },
   thumbnailContainerStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginLeft: 10,
     marginRight: 10
   },
@@ -69,4 +53,3 @@ const styles = {
 };
 
 export default NewsItem;
-
